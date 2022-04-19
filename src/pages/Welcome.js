@@ -1,13 +1,15 @@
-import { Route } from "react-router-dom";
+import { Route, Routes, Link, Outlet } from "react-router-dom";
 
 function Welcome() {
 	return (
 		<section>
 			<h1>Welcome Page</h1>
 			{/* Nested element */}
-			<Route path="/welcome/new-user">
-				<p>Welcome new user</p>
-			</Route>
+			<Link to="new-user">New User</Link>
+			<Outlet />
+			{/* <Routes>
+				<Route path="/new-user" element={<p>Welcome new user</p>}></Route>
+			</Routes> */}
 		</section>
 	);
 }
